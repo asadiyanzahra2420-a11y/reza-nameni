@@ -1,0 +1,220 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  background: #f7f8f5;
+  color: #26352f;
+  line-height: 1.9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.header {
+  background: #142b28;
+  color: white;
+  padding: 15px 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: #d9bd78;
+  font-size: 23px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #d9bd78;
+}
+
+.hero {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(120deg, #142b28, #294d43);
+  color: white;
+  padding: 90px 0;
+}
+
+.hero-content {
+  text-align: right;
+}
+
+.eyebrow {
+  color: #dfc47e;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 650px;
+  color: #e0e8e3;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #d9bd78;
+  color: #142b28;
+  padding: 11px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 85px 0;
+}
+
+.section h2 {
+  text-align: center;
+  color: #183b32;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  text-align: center;
+  color: #77837d;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid #e7ebe5;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px #142b2815;
+}
+
+.service-card span {
+  color: #b69b57;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.service-card h3 {
+  color: #23483d;
+  font-size: 18px;
+  margin: 12px 0;
+}
+
+.service-card p {
+  color: #748079;
+  font-size: 14px;
+}
+
+.about {
+  background: #e9eee8;
+  text-align: center;
+}
+
+.about p {
+  max-width: 750px;
+  margin: 20px auto 0;
+  color: #586a60;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: #65746c;
+  margin-top: 12px;
+}
+
+.contact-name {
+  color: #23483d !important;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+footer {
+  background: #142b28;
+  color: #dce5df;
+  text-align: center;
+  padding: 25px;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero {
+    min-height: 430px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+}
