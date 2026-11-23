@@ -1,6 +1,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
+:root {
+    --green: #183b32;
+    --green-dark: #102923;
+    --green-light: #397968;
+    --gold: #d1ad64;
+    --gold-light: #e8ce91;
+    --cream: #f3ebdd;
+    --brick: #b87555;
+    --white: #ffffff;
+    --text: #293a33;
+    --muted: #758078;
+    --background: #f7f7f2;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,14 +23,15 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 85px;
 }
 
 body {
     font-family: 'Vazirmatn', sans-serif;
     direction: rtl;
-    background-color: #f7f8f6;
-    color: #24352e;
-    line-height: 1.8;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.9;
 }
 
 a {
@@ -24,46 +39,51 @@ a {
     color: inherit;
 }
 
-img {
-    max-width: 100%;
-    display: block;
+button {
+    font-family: inherit;
 }
 
-/* نوار بالای سایت */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* سربرگ و منو */
 header {
-    background: #102923;
-    color: white;
-    padding: 18px 7%;
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 17px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
+    border-bottom: 3px solid var(--gold);
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 800;
-    color: #d8b66a;
+    color: var(--gold);
 }
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 23px;
     flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
+    color: var(--white);
     font-size: 14px;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #d8b66a;
+    color: var(--gold);
 }
 
-/* بخش اصلی و تصویر پس‌زمینه */
+/* بخش اصلی */
 .hero {
     min-height: 560px;
     display: flex;
@@ -72,42 +92,51 @@ nav a:hover {
     background:
         linear-gradient(
             90deg,
-            rgba(16, 41, 35, 0.92),
-            rgba(16, 41, 35, 0.48)
+            rgba(16, 41, 35, 0.94),
+            rgba(35, 83, 68, 0.55)
         ),
         url("./photo_2026-11-23_22-27-45.jpg") center center / cover no-repeat;
-    color: white;
+    color: var(--white);
 }
 
 .hero-content {
     max-width: 650px;
 }
 
+.hero-label {
+    display: inline-block;
+    color: var(--gold-light);
+    border-right: 3px solid var(--gold);
+    padding-right: 12px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
 .hero h1 {
     font-size: 38px;
     line-height: 1.7;
-    margin-bottom: 20px;
-    color: #ffffff;
+    margin-bottom: 18px;
+    color: var(--white);
 }
 
 .hero p {
-    font-size: 17px;
+    font-size: 16px;
     color: #eeeeee;
     margin-bottom: 30px;
 }
 
 .hero-button {
     display: inline-block;
-    background: #d8b66a;
-    color: #102923;
-    padding: 12px 30px;
-    border-radius: 6px;
+    background: var(--gold);
+    color: var(--green-dark);
+    padding: 11px 27px;
+    border-radius: 8px;
     font-weight: 700;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .hero-button:hover {
-    background: #f0d28b;
+    background: var(--gold-light);
     transform: translateY(-3px);
 }
 
@@ -119,14 +148,15 @@ section {
 .section-title {
     text-align: center;
     font-size: 28px;
-    color: #183b30;
-    margin-bottom: 15px;
+    color: var(--green);
+    margin-bottom: 12px;
 }
 
 .section-description {
     text-align: center;
-    color: #68756e;
+    color: var(--muted);
     margin-bottom: 40px;
+    font-size: 14px;
 }
 
 /* خدمات */
@@ -137,33 +167,151 @@ section {
 }
 
 .service-card {
-    background: white;
+    width: 100%;
+    background: var(--white);
     padding: 28px 22px;
-    border-radius: 10px;
-    border-bottom: 4px solid #d8b66a;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: 0.3s;
+    border: 1px solid #e7e9e1;
+    border-bottom: 4px solid var(--gold);
+    border-radius: 13px;
+    text-align: right;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-card:nth-child(2),
+.service-card:nth-child(5) {
+    border-bottom-color: var(--green-light);
+}
+
+.service-card:nth-child(3),
+.service-card:nth-child(6) {
+    border-bottom-color: var(--brick);
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+    background: var(--cream);
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(24, 59, 50, 0.12);
+}
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf1eb;
+    border: 1px solid #dce8dd;
+    border-radius: 16px;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.service-card:nth-child(2) .service-icon,
+.service-card:nth-child(5) .service-icon {
+    background: #e5f0eb;
+}
+
+.service-card:nth-child(3) .service-icon,
+.service-card:nth-child(6) .service-icon {
+    background: #f6ece5;
 }
 
 .service-card h3 {
-    color: #183b30;
-    font-size: 18px;
-    margin-bottom: 12px;
+    color: var(--green);
+    font-size: 17px;
+    margin-bottom: 10px;
 }
 
 .service-card p {
-    color: #68756e;
-    font-size: 14px;
+    color: var(--green-light);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* پنجره توضیحات خدمات */
+.service-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.72);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.service-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #fffdf8;
+    width: 100%;
+    max-width: 520px;
+    padding: 40px 30px;
+    border-radius: 14px;
+    position: relative;
+    text-align: center;
+    border-top: 5px solid var(--gold);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: modalShow 0.25s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    border: none;
+    background: transparent;
+    color: var(--green);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--brick);
+}
+
+.modal-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--cream);
+    border-radius: 20px;
+    font-size: 43px;
+    margin: 0 auto 20px;
+}
+
+.modal-content h2 {
+    color: var(--green);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.modal-content p {
+    color: #59675f;
+    line-height: 2.2;
+    margin-bottom: 25px;
+}
+
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* گالری تصاویر */
 .gallery {
-    background: #edf1ed;
+    background: var(--cream);
 }
 
 .gallery-grid {
@@ -176,32 +324,45 @@ section {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 9px;
-    transition: 0.3s;
+    border: 4px solid var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(24, 59, 50, 0.12);
+    transition: all 0.35s ease;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.025);
+    transform: scale(1.035);
+    border-color: var(--gold);
 }
 
 /* درباره ما */
+#about {
+    background: var(--background);
+}
+
 .about-content {
-    max-width: 850px;
+    max-width: 900px;
     margin: auto;
-    text-align: center;
+    background: var(--white);
+    border-right: 5px solid var(--green-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(24, 59, 50, 0.06);
     color: #59675f;
-    font-size: 16px;
+    font-size: 15px;
+    text-align: justify;
 }
 
 /* تماس با ما */
 .contact {
-    background: #102923;
-    color: white;
+    background: linear-gradient(135deg, var(--green-dark), #285c4d);
+    border-top: 4px solid var(--gold);
+    color: var(--white);
     text-align: center;
 }
 
 .contact .section-title {
-    color: #d8b66a;
+    color: var(--gold);
 }
 
 .contact p {
@@ -209,38 +370,49 @@ section {
     color: #eeeeee;
 }
 
+.contact p a {
+    color: var(--gold-light);
+    font-weight: 700;
+    direction: ltr;
+    display: inline-block;
+}
+
 /* پایین سایت */
 footer {
     background: #0a1d18;
-    color: #cbd4cf;
+    color: #d9e2dc;
     text-align: center;
     padding: 20px;
     font-size: 13px;
+    border-top: 2px solid var(--green-light);
 }
 
-/* نمایش در تبلت و موبایل */
+/* نمایش در تبلت */
 @media (max-width: 900px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+    .services-grid,
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .hero h1 {
-        font-size: 30px;
+        font-size: 31px;
     }
 }
 
+/* نمایش در موبایل */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
+        padding: 17px 5%;
     }
 
     nav {
         justify-content: center;
-        gap: 15px;
+        gap: 12px 17px;
+    }
+
+    nav a {
+        font-size: 13px;
     }
 
     .hero {
@@ -254,11 +426,15 @@ footer {
     }
 
     .hero p {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     section {
         padding: 55px 6%;
+    }
+
+    .section-title {
+        font-size: 24px;
     }
 
     .services-grid,
@@ -269,21 +445,12 @@ footer {
     .gallery-grid img {
         height: 230px;
     }
-}
 
-.service-icon {
-    width: 65px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #edf3ed;
-    border-radius: 14px;
-    font-size: 32px;
-    margin-bottom: 18px;
-    border: 1px solid #e0e9df;
-}
+    .modal-content {
+        padding: 38px 22px 28px;
+    }
 
-.service-card {
-    text-align: right;
+    .modal-content h2 {
+        font-size: 19px;
+    }
 }
