@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* اطمینان از نمایش صحیح کارت‌های خدمات */
         .services-grid .service-card {
             display: block;
             width: 100%;
@@ -21,7 +20,6 @@
             text-align: right;
         }
 
-        /* پنجره توضیحات */
         #serviceModal {
             display: none;
             position: fixed;
@@ -79,6 +77,47 @@
             margin-bottom: 25px;
         }
 
+        /* لوگوهای پیام‌رسان‌ها */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-item {
+            width: 65px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .social-item img {
+            width: 48px;
+            height: 48px;
+            padding: 8px;
+            object-fit: contain;
+            background: #ffffff;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .social-item small {
+            font-size: 12px;
+            color: #eeeeee;
+        }
+
+        .social-item:hover img {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.2);
+        }
+
         @keyframes modalAppear {
             from {
                 opacity: 0;
@@ -93,6 +132,15 @@
         @media (max-width: 600px) {
             #serviceModal .modal-content {
                 padding: 40px 20px 28px;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .social-item img {
+                width: 43px;
+                height: 43px;
             }
         }
     </style>
@@ -266,37 +314,57 @@
 
         <div class="social-links">
 
+            <!-- واتساپ -->
             <a class="social-item whatsapp"
                href="https://wa.me/989188109597"
                target="_blank"
-               rel="noopener"
-               aria-label="واتساپ">
-                <span>W</span>
+               rel="noopener noreferrer"
+               aria-label="ارتباط در واتساپ">
+
+                <img src="https://cdn.simpleicons.org/whatsapp/25D366"
+                     alt="لوگوی واتساپ">
+
                 <small>واتساپ</small>
             </a>
 
-            <div class="social-item telegram">
-                <span>T</span>
-                <small>تلگرام</small>
-            </div>
+            <!-- تلگرام -->
+            <a class="social-item telegram"
+               href="https://t.me/+989188109597"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="ارتباط در تلگرام">
 
+                <img src="https://cdn.simpleicons.org/telegram/229ED9"
+                     alt="لوگوی تلگرام">
+
+                <small>تلگرام</small>
+            </a>
+
+            <!-- روبیکا -->
             <div class="social-item rubika">
-                <span>R</span>
+                <img src="https://www.google.com/s2/favicons?domain=rubika.ir&sz=128"
+                     alt="لوگوی روبیکا">
                 <small>روبیکا</small>
             </div>
 
+            <!-- ایتا -->
             <div class="social-item eitaa">
-                <span>E</span>
+                <img src="https://www.google.com/s2/favicons?domain=eitaa.com&sz=128"
+                     alt="لوگوی ایتا">
                 <small>ایتا</small>
             </div>
 
+            <!-- سروش -->
             <div class="social-item splus">
-                <span>S</span>
+                <img src="https://www.google.com/s2/favicons?domain=splus.ir&sz=128"
+                     alt="لوگوی سروش">
                 <small>سروش</small>
             </div>
 
+            <!-- بله -->
             <div class="social-item bale">
-                <span>B</span>
+                <img src="https://www.google.com/s2/favicons?domain=bale.ai&sz=128"
+                     alt="لوگوی بله">
                 <small>بله</small>
             </div>
 
