@@ -32,47 +32,77 @@ const services = [
     }
 ];
 
-function openService(index) {
-    const service = services[index];
-
-    if (!service) return;
-
-    document.getElementById("modalIcon").textContent = service.icon;
-    document.getElementById("modalTitle").textContent = service.title;
-    document.getElementById("modalDescription").textContent = service.description;
-
-    const modal = document.getElementById("serviceModal");
-    modal.classList.add("active");
-    modal.setAttribute("aria-hidden", "false");
-
-    document.body.style.overflow = "hidden";
-}
-
-function closeService() {
-    const modal = document.getElementById("serviceModal");
-
-    if (!modal) return;
-
-    modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-
-    document.body.style.overflow = "";
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("serviceModal");
 
-    if (modal) {
-        modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                closeService();
-            }
-        });
+    const modal = document.getElementById("serviceModal");
+    const modalIcon = document.getElementById("modalIcon");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const closeButton = document.getElementById("modalClose");
+    const contactButton = document.getElementById("modalContact");
+
+    // بررسی وجود پنجره توضیحات
+    if (!modal || !modalIcon || !modalTitle || !modalDescription) {
+        console.error("بخش توضیحات خدمات در HTML پیدا نشد.");
+        return;
     }
 
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            closeService();
+    // باز کردن توضیحات هر خدمت
+    const serviceCards = document.querySelectorAll(".service-card");
+
+    serviceCards.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+
+            const index = Number(card.dataset.service);
+            const service = services[index];
+
+            if (!service) return;
+
+            modalIcon.textContent = service.icon;
+            modalTitle.textContent = service.title;
+            modalDescription.textContent = service.description;
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+
+            document.body.style.overflow = "hidden";
+
+            if (closeButton) {
+                closeButton.focus();
+            }
+        });
+
+    });
+
+    // بستن پنجره
+    function closeModal() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener("click", closeModal);
+    }
+
+    // بستن با کلیک بیرون پنجره
+    modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            closeModal();
         }
     });
+
+    // بستن با کلید Escape
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("active")) {
+            closeModal();
+        }
+    });
+
+    // بستن پنجره هنگام رفتن به بخش تماس
+    if (contactButton) {
+        contactButton.addEventListener("click", closeModal);
+    }
+
 });
