@@ -8,7 +8,94 @@
     <title>مهندس رضا نامنی | خدمات نقشه‌برداری</title>
 
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+
+    <style>
+        /* اطمینان از نمایش صحیح کارت‌های خدمات */
+        .services-grid .service-card {
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            font-family: inherit;
+            position: relative;
+            z-index: 1;
+            text-align: right;
+        }
+
+        /* پنجره توضیحات */
+        #serviceModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.78);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #serviceModal.active {
+            display: flex !important;
+        }
+
+        #serviceModal .modal-content {
+            position: relative;
+            background: #fffdf8;
+            width: 100%;
+            max-width: 520px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border-top: 5px solid #d1ad64;
+            text-align: center;
+            animation: modalAppear 0.25s ease;
+        }
+
+        #serviceModal .modal-close {
+            position: absolute;
+            top: 8px;
+            left: 15px;
+            border: none;
+            background: transparent;
+            color: #183b32;
+            font-size: 34px;
+            cursor: pointer;
+        }
+
+        #serviceModal .modal-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        #serviceModal h2 {
+            color: #183b32;
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        #serviceModal p {
+            color: #59675f;
+            line-height: 2.2;
+            margin-bottom: 25px;
+        }
+
+        @keyframes modalAppear {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            #serviceModal .modal-content {
+                padding: 40px 20px 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -92,10 +179,10 @@
         </div>
     </section>
 
-    <!-- پنجره توضیحات خدمات -->
-    <div class="service-modal" id="serviceModal" aria-hidden="true">
+    <!-- پنجره توضیحات -->
+    <div id="serviceModal" aria-hidden="true">
 
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content" role="dialog" aria-modal="true">
 
             <button type="button" class="modal-close" id="modalClose" aria-label="بستن">
                 ×
@@ -222,6 +309,97 @@
 <footer>
     <p>تمامی حقوق این وب‌سایت متعلق به مهندس رضا نامنی است.</p>
 </footer>
+
+<script>
+(function () {
+
+    const services = [
+        {
+            icon: "🌾",
+            title: "نقشه‌برداری اراضی کشاورزی",
+            description: "تهیه نقشه دقیق از اراضی کشاورزی، تعیین حدود و مساحت زمین، مشخص کردن مختصات گوشه‌های ملک و تهیه اطلاعات مکانی موردنیاز برای امور ملکی و کشاورزی."
+        },
+        {
+            icon: "🌳",
+            title: "نقشه‌برداری منابع طبیعی",
+            description: "انجام عملیات نقشه‌برداری و تعیین موقعیت و محدوده اراضی منابع طبیعی با هدف تهیه اطلاعات مکانی دقیق و مستندسازی حدود زمین."
+        },
+        {
+            icon: "🗺️",
+            title: "نقشه‌های توپوگرافی",
+            description: "تهیه نقشه‌های توپوگرافی با نمایش عوارض طبیعی و مصنوعی زمین، پستی و بلندی‌ها، خطوط تراز و اختلاف ارتفاع برای مطالعات و پروژه‌های عمرانی."
+        },
+        {
+            icon: "📐",
+            title: "نقشه‌های کاداستر",
+            description: "تهیه نقشه‌های کاداستری برای مشخص کردن موقعیت، حدود و ابعاد قطعات ملکی و ثبت اطلاعات مکانی آن‌ها."
+        },
+        {
+            icon: "📋",
+            title: "نقشه‌های ثبتی",
+            description: "تهیه نقشه‌های موردنیاز امور ثبتی و ملکی با هدف تعیین دقیق حدود و موقعیت املاک و آماده‌سازی اطلاعات مکانی موردنیاز."
+        },
+        {
+            icon: "📍",
+            title: "نقشه UTM",
+            description: "تهیه نقشه UTM و تعیین مختصات گوشه‌های زمین در سیستم مختصات جهانی UTM برای مشخص کردن موقعیت دقیق ملک و استفاده در امور ملکی و ثبتی."
+        }
+    ];
+
+    const modal = document.getElementById("serviceModal");
+    const modalIcon = document.getElementById("modalIcon");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+
+    if (!modal || !modalIcon || !modalTitle || !modalDescription) {
+        console.error("اجزای پنجره توضیحات پیدا نشدند.");
+        return;
+    }
+
+    function openService(index) {
+        const service = services[index];
+
+        if (!service) return;
+
+        modalIcon.textContent = service.icon;
+        modalTitle.textContent = service.title;
+        modalDescription.textContent = service.description;
+
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeService() {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".service-card").forEach(function(card) {
+        card.addEventListener("click", function() {
+            openService(Number(card.dataset.service));
+        });
+    });
+
+    document.getElementById("modalClose").addEventListener("click", closeService);
+
+    modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+            closeService();
+        }
+    });
+
+    document.getElementById("modalContact").addEventListener("click", closeService);
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeService();
+        }
+    });
+
+})();
+</script>
 
 </body>
 </html>
