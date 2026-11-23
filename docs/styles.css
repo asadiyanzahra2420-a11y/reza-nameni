@@ -48,7 +48,7 @@ img {
     max-width: 100%;
 }
 
-/* سربرگ و منو */
+/* سربرگ */
 header {
     background: var(--green-dark);
     color: var(--white);
@@ -89,6 +89,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     padding: 70px 8%;
+
     background:
         linear-gradient(
             90deg,
@@ -96,6 +97,7 @@ nav a:hover {
             rgba(35, 83, 68, 0.55)
         ),
         url("./photo_2026-11-23_22-27-45.jpg") center center / cover no-repeat;
+
     color: var(--white);
 }
 
@@ -159,7 +161,7 @@ section {
     font-size: 14px;
 }
 
-/* خدمات */
+/* کارت‌های خدمات */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -193,6 +195,11 @@ section {
     background: var(--cream);
     transform: translateY(-7px);
     box-shadow: 0 12px 28px rgba(24, 59, 50, 0.12);
+}
+
+.service-card:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
 }
 
 .service-icon {
@@ -303,13 +310,14 @@ section {
         opacity: 0;
         transform: translateY(15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* گالری تصاویر */
+/* گالری */
 .gallery {
     background: var(--cream);
 }
@@ -370,11 +378,79 @@ section {
     color: #eeeeee;
 }
 
-.contact p a {
+.contact .phone-number a {
     color: var(--gold-light);
     font-weight: 700;
-    direction: ltr;
     display: inline-block;
+}
+
+.social-title {
+    margin-top: 25px !important;
+    margin-bottom: 18px !important;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.social-item {
+    width: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    color: var(--white);
+}
+
+.social-item > span {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.social-item small {
+    font-size: 12px;
+    color: #eeeeee;
+}
+
+.social-item:hover > span {
+    transform: translateY(-5px);
+}
+
+.whatsapp > span {
+    background: #25D366;
+}
+
+.telegram > span {
+    background: #229ED9;
+}
+
+.rubika > span {
+    background: #8B62C9;
+}
+
+.eitaa > span {
+    background: #E99A36;
+}
+
+.splus > span {
+    background: #397968;
+}
+
+.bale > span {
+    background: #2787D8;
 }
 
 /* پایین سایت */
@@ -387,7 +463,7 @@ footer {
     border-top: 2px solid var(--green-light);
 }
 
-/* نمایش در تبلت */
+/* تبلت */
 @media (max-width: 900px) {
     .services-grid,
     .gallery-grid {
@@ -399,7 +475,7 @@ footer {
     }
 }
 
-/* نمایش در موبایل */
+/* موبایل */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
@@ -452,5 +528,9 @@ footer {
 
     .modal-content h2 {
         font-size: 19px;
+    }
+
+    .social-links {
+        gap: 12px;
     }
 }
