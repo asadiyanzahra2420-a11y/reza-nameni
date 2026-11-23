@@ -270,3 +270,20 @@ footer {
         height: 230px;
     }
 }
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf3ed;
+    border-radius: 14px;
+    font-size: 32px;
+    margin-bottom: 18px;
+    border: 1px solid #e0e9df;
+}
+
+.service-card {
+    text-align: right;
+}
