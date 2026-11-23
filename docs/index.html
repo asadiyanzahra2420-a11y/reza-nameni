@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="خدمات تخصصی نقشه‌برداری اراضی کشاورزی، منابع طبیعی، توپوگرافی، کاداستر، ثبتی و UTM">
     <title>مهندس رضا نامنی | خدمات نقشه‌برداری</title>
+
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
 
 <header>
     <a href="#home" class="logo">مهندس رضا نامنی</a>
+
     <nav>
         <a href="#home">خانه</a>
         <a href="#services">خدمات</a>
@@ -22,93 +26,129 @@
 </header>
 
 <main>
+
+    <!-- بخش اصلی -->
     <section class="hero" id="home">
         <div class="hero-content">
             <span class="hero-label">خدمات تخصصی نقشه‌برداری</span>
+
             <h1>دقت در نقشه‌برداری، اطمینان در تصمیم‌گیری</h1>
+
             <p>
                 ارائه خدمات تخصصی نقشه‌برداری، تهیه نقشه‌های توپوگرافی،
                 ثبتی و UTM با دقت و کیفیت حرفه‌ای
             </p>
+
             <a href="#services" class="hero-button">مشاهده خدمات</a>
         </div>
     </section>
 
+    <!-- خدمات تخصصی -->
     <section id="services">
         <h2 class="section-title">خدمات تخصصی</h2>
+
         <p class="section-description">
             برای مشاهده توضیحات هر خدمت روی کارت موردنظر کلیک کنید.
         </p>
 
         <div class="services-grid">
-            <button type="button" class="service-card" onclick="openService(0)">
+
+            <button type="button" class="service-card" data-service="0">
                 <span class="service-icon">🌾</span>
                 <h3>نقشه‌برداری اراضی کشاورزی</h3>
                 <p>مشاهده توضیحات خدمت ←</p>
             </button>
 
-            <button type="button" class="service-card" onclick="openService(1)">
+            <button type="button" class="service-card" data-service="1">
                 <span class="service-icon">🌳</span>
                 <h3>نقشه‌برداری منابع طبیعی</h3>
                 <p>مشاهده توضیحات خدمت ←</p>
             </button>
 
-            <button type="button" class="service-card" onclick="openService(2)">
+            <button type="button" class="service-card" data-service="2">
                 <span class="service-icon">🗺️</span>
                 <h3>نقشه‌های توپوگرافی</h3>
                 <p>مشاهده توضیحات خدمت ←</p>
             </button>
 
-            <button type="button" class="service-card" onclick="openService(3)">
+            <button type="button" class="service-card" data-service="3">
                 <span class="service-icon">📐</span>
                 <h3>نقشه‌های کاداستر</h3>
                 <p>مشاهده توضیحات خدمت ←</p>
             </button>
 
-            <button type="button" class="service-card" onclick="openService(4)">
+            <button type="button" class="service-card" data-service="4">
                 <span class="service-icon">📋</span>
                 <h3>نقشه‌های ثبتی</h3>
                 <p>مشاهده توضیحات خدمت ←</p>
             </button>
 
-            <button type="button" class="service-card" onclick="openService(5)">
+            <button type="button" class="service-card" data-service="5">
                 <span class="service-icon">📍</span>
                 <h3>نقشه UTM</h3>
                 <p>مشاهده توضیحات خدمت ←</p>
             </button>
+
         </div>
     </section>
 
+    <!-- پنجره توضیحات خدمات -->
     <div class="service-modal" id="serviceModal" aria-hidden="true">
+
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            <button type="button" class="modal-close" onclick="closeService()" aria-label="بستن">×</button>
+
+            <button type="button" class="modal-close" id="modalClose" aria-label="بستن">
+                ×
+            </button>
+
             <div class="modal-icon" id="modalIcon"></div>
+
             <h2 id="modalTitle"></h2>
+
             <p id="modalDescription"></p>
-            <a href="#contact" class="hero-button" onclick="closeService()">درخواست مشاوره</a>
+
+            <a href="#contact" class="hero-button" id="modalContact">
+                درخواست مشاوره
+            </a>
+
         </div>
     </div>
 
+    <!-- گالری تصاویر -->
     <section class="gallery" id="gallery">
+
         <h2 class="section-title">گالری تصاویر</h2>
+
         <p class="section-description">
             نمونه‌ای از تجهیزات و فعالیت‌های نقشه‌برداری
         </p>
 
         <div class="gallery-grid">
-            <img src="photo_2026-11-23_22-27-35.jpg" alt="نمونه فعالیت نقشه‌برداری">
-            <img src="photo_2026-11-23_22-27-42.jpg" alt="تجهیزات نقشه‌برداری">
-            <img src="photo_2026-11-23_22-27-45.jpg" alt="دوربین نقشه‌برداری">
-            <img src="photo_2026-11-23_22-27-50.jpg" alt="پروژه نقشه‌برداری">
-            <img src="photo_2026-11-23_22-27-57.jpg" alt="نمونه کار نقشه‌برداری">
-            <img src="photo_2026-11-23_22-28-09.jpg" alt="تجهیزات نقشه‌برداری">
-            <img src="photo_2026-11-23_22-28-17.jpg" alt="فعالیت نقشه‌برداری">
-            <img src="photo_2026-11-23_22-28-30.jpg" alt="نمونه پروژه">
+
+            <img src="photo_2026-11-23_22-27-35.jpg" alt="نمونه فعالیت نقشه‌برداری" loading="lazy">
+
+            <img src="photo_2026-11-23_22-27-42.jpg" alt="تجهیزات نقشه‌برداری" loading="lazy">
+
+            <img src="photo_2026-11-23_22-27-45.jpg" alt="دوربین نقشه‌برداری" loading="lazy">
+
+            <img src="photo_2026-11-23_22-27-50.jpg" alt="پروژه نقشه‌برداری" loading="lazy">
+
+            <img src="photo_2026-11-23_22-27-57.jpg" alt="نمونه کار نقشه‌برداری" loading="lazy">
+
+            <img src="photo_2026-11-23_22-28-09.jpg" alt="تجهیزات نقشه‌برداری" loading="lazy">
+
+            <img src="photo_2026-11-23_22-28-17.jpg" alt="فعالیت نقشه‌برداری" loading="lazy">
+
+            <img src="photo_2026-11-23_22-28-30.jpg" alt="نمونه پروژه" loading="lazy">
+
         </div>
     </section>
 
+    <!-- درباره ما -->
     <section id="about">
+
         <h2 class="section-title">درباره ما</h2>
+
         <div class="about-content">
             <p>
                 مهندس رضا نامنی با ارائه خدمات تخصصی نقشه‌برداری،
@@ -118,25 +158,70 @@
                 تجهیزات و روش‌های تخصصی نقشه‌برداری است.
             </p>
         </div>
+
     </section>
 
+    <!-- تماس با ما -->
     <section class="contact" id="contact">
-        <h2 class="section-title">تماس با ما</h2>
+
+        <h2 class="section-title">تماس و ارتباط با ما</h2>
+
         <p>مهندس رضا نامنی</p>
-        <p>
+
+        <p class="phone-number">
             شماره تماس:
             <a href="tel:09188109597" dir="ltr">09188109597</a>
         </p>
-        <a href="https://wa.me/989188109597" class="hero-button" target="_blank" rel="noopener">
-            ارتباط در واتساپ
-        </a>
+
+        <p class="social-title">
+            از طریق پیام‌رسان‌های زیر با ما در ارتباط باشید:
+        </p>
+
+        <div class="social-links">
+
+            <a class="social-item whatsapp"
+               href="https://wa.me/989188109597"
+               target="_blank"
+               rel="noopener"
+               aria-label="واتساپ">
+                <span>W</span>
+                <small>واتساپ</small>
+            </a>
+
+            <div class="social-item telegram">
+                <span>T</span>
+                <small>تلگرام</small>
+            </div>
+
+            <div class="social-item rubika">
+                <span>R</span>
+                <small>روبیکا</small>
+            </div>
+
+            <div class="social-item eitaa">
+                <span>E</span>
+                <small>ایتا</small>
+            </div>
+
+            <div class="social-item splus">
+                <span>S</span>
+                <small>سروش</small>
+            </div>
+
+            <div class="social-item bale">
+                <span>B</span>
+                <small>بله</small>
+            </div>
+
+        </div>
+
     </section>
+
 </main>
 
 <footer>
     <p>تمامی حقوق این وب‌سایت متعلق به مهندس رضا نامنی است.</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
