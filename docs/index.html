@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="خدمات تخصصی نقشه‌برداری اراضی کشاورزی، منابع طبیعی، توپوگرافی، کاداستر، ثبتی و UTM">
     <title>مهندس رضا نامنی | خدمات نقشه‌برداری</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-    <div class="logo">مهندس رضا نامنی</div>
+    <a href="#home" class="logo">مهندس رضا نامنی</a>
     <nav>
         <a href="#home">خانه</a>
         <a href="#services">خدمات</a>
@@ -23,6 +24,7 @@
 <main>
     <section class="hero" id="home">
         <div class="hero-content">
+            <span class="hero-label">خدمات تخصصی نقشه‌برداری</span>
             <h1>دقت در نقشه‌برداری، اطمینان در تصمیم‌گیری</h1>
             <p>
                 ارائه خدمات تخصصی نقشه‌برداری، تهیه نقشه‌های توپوگرافی،
@@ -35,49 +37,57 @@
     <section id="services">
         <h2 class="section-title">خدمات تخصصی</h2>
         <p class="section-description">
-            ارائه خدمات نقشه‌برداری با تجهیزات دقیق و استاندارد
+            برای مشاهده توضیحات هر خدمت روی کارت موردنظر کلیک کنید.
         </p>
 
         <div class="services-grid">
-
-            <div class="service-card">
-                <div class="service-icon">🌾</div>
+            <button type="button" class="service-card" onclick="openService(0)">
+                <span class="service-icon">🌾</span>
                 <h3>نقشه‌برداری اراضی کشاورزی</h3>
-                <p>اندازه‌گیری و تهیه نقشه دقیق از زمین‌های کشاورزی.</p>
-            </div>
+                <p>مشاهده توضیحات خدمت ←</p>
+            </button>
 
-            <div class="service-card">
-                <div class="service-icon">🌳</div>
+            <button type="button" class="service-card" onclick="openService(1)">
+                <span class="service-icon">🌳</span>
                 <h3>نقشه‌برداری منابع طبیعی</h3>
-                <p>تهیه نقشه و بررسی محدوده اراضی منابع طبیعی.</p>
-            </div>
+                <p>مشاهده توضیحات خدمت ←</p>
+            </button>
 
-            <div class="service-card">
-                <div class="service-icon">🗺️</div>
+            <button type="button" class="service-card" onclick="openService(2)">
+                <span class="service-icon">🗺️</span>
                 <h3>نقشه‌های توپوگرافی</h3>
-                <p>نمایش عوارض طبیعی و مصنوعی زمین و تعیین ارتفاعات.</p>
-            </div>
+                <p>مشاهده توضیحات خدمت ←</p>
+            </button>
 
-            <div class="service-card">
-                <div class="service-icon">📐</div>
+            <button type="button" class="service-card" onclick="openService(3)">
+                <span class="service-icon">📐</span>
                 <h3>نقشه‌های کاداستر</h3>
-                <p>تهیه نقشه‌های دقیق محدوده املاک و قطعات زمین.</p>
-            </div>
+                <p>مشاهده توضیحات خدمت ←</p>
+            </button>
 
-            <div class="service-card">
-                <div class="service-icon">📋</div>
+            <button type="button" class="service-card" onclick="openService(4)">
+                <span class="service-icon">📋</span>
                 <h3>نقشه‌های ثبتی</h3>
-                <p>تهیه نقشه‌های موردنیاز امور ثبتی و ملکی.</p>
-            </div>
+                <p>مشاهده توضیحات خدمت ←</p>
+            </button>
 
-            <div class="service-card">
-                <div class="service-icon">📍</div>
+            <button type="button" class="service-card" onclick="openService(5)">
+                <span class="service-icon">📍</span>
                 <h3>نقشه UTM</h3>
-                <p>تعیین مختصات دقیق و موقعیت جغرافیایی اراضی.</p>
-            </div>
-
+                <p>مشاهده توضیحات خدمت ←</p>
+            </button>
         </div>
     </section>
+
+    <div class="service-modal" id="serviceModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button type="button" class="modal-close" onclick="closeService()" aria-label="بستن">×</button>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <a href="#contact" class="hero-button" onclick="closeService()">درخواست مشاوره</a>
+        </div>
+    </div>
 
     <section class="gallery" id="gallery">
         <h2 class="section-title">گالری تصاویر</h2>
@@ -117,7 +127,7 @@
             شماره تماس:
             <a href="tel:09188109597" dir="ltr">09188109597</a>
         </p>
-        <a href="https://wa.me/989188109597" class="hero-button">
+        <a href="https://wa.me/989188109597" class="hero-button" target="_blank" rel="noopener">
             ارتباط در واتساپ
         </a>
     </section>
