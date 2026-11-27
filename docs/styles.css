@@ -622,3 +622,324 @@ footer {
         gap: 12px;
     }
 }
+/* =================================
+   بخش چرا مهندس رضا نامنی؟
+================================= */
+
+.why-section {
+    background: #ffffff;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.why-card {
+    background: #f7f7f2;
+    border: 1px solid #e5e9e1;
+    border-top: 4px solid var(--gold);
+    border-radius: 14px;
+    padding: 27px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(24, 59, 50, 0.10);
+    background: #ffffff;
+}
+
+.why-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 17px;
+    border-radius: 18px;
+    background: #eaf1eb;
+    font-size: 30px;
+}
+
+.why-card h3 {
+    color: var(--green);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.why-card p {
+    color: #68766e;
+    font-size: 13px;
+    line-height: 2.1;
+}
+
+
+/* =================================
+   مراحل انجام پروژه
+================================= */
+
+.process-section {
+    background: var(--cream);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.process-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid #e9e4d8;
+    box-shadow: 0 5px 18px rgba(24, 59, 50, 0.05);
+    transition: all 0.3s ease;
+}
+
+.process-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(24, 59, 50, 0.11);
+}
+
+.process-number {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.process-icon {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px auto 18px;
+    border-radius: 20px;
+    background: #eaf1eb;
+    font-size: 31px;
+}
+
+.process-card h3 {
+    color: var(--green);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.process-card p {
+    color: #68766e;
+    font-size: 13px;
+    line-height: 2.1;
+}
+
+
+/* =================================
+   محدوده ارائه خدمات
+================================= */
+
+.coverage-section {
+    background:
+        linear-gradient(
+            120deg,
+            rgba(16, 41, 35, 0.97),
+            rgba(39, 91, 74, 0.94)
+        );
+    padding: 65px 8%;
+}
+
+.coverage-content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 35px;
+    border: 1px solid rgba(232, 206, 145, 0.35);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.coverage-symbol {
+    min-width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(209, 173, 100, 0.17);
+    border: 1px solid rgba(232, 206, 145, 0.4);
+    border-radius: 25px;
+    font-size: 42px;
+}
+
+.coverage-text {
+    flex: 1;
+}
+
+.coverage-label {
+    display: inline-block;
+    color: var(--gold-light);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.coverage-text h2 {
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.coverage-text p {
+    color: #e3eae5;
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+
+/* =================================
+   درخواست مشاوره و ثبت سفارش
+================================= */
+
+.consultation-section {
+    background: #f7f7f2;
+    text-align: center;
+    padding: 75px 8%;
+}
+
+.consultation-content {
+    max-width: 850px;
+    margin: auto;
+    padding: 45px 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e8e8df;
+    border-bottom: 5px solid var(--gold);
+    box-shadow: 0 10px 35px rgba(24, 59, 50, 0.08);
+}
+
+.consultation-label {
+    display: inline-block;
+    color: var(--green-light);
+    background: #eaf1eb;
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.consultation-content h2 {
+    color: var(--green);
+    font-size: 25px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.consultation-content p {
+    color: #68766e;
+    font-size: 14px;
+    line-height: 2.2;
+    margin-bottom: 25px;
+}
+
+.consultation-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.consultation-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    min-width: 175px;
+    padding: 12px 23px;
+    border-radius: 9px;
+    background: var(--green);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.consultation-button:hover {
+    background: var(--green-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(24, 59, 50, 0.18);
+}
+
+.whatsapp-button {
+    background: #258b59;
+}
+
+.whatsapp-button:hover {
+    background: #176d43;
+}
+
+.consultation-button span {
+    font-size: 18px;
+}
+
+
+/* =================================
+   نمایش در تبلت
+================================= */
+
+@media (max-width: 1000px) {
+
+    .why-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =================================
+   نمایش در موبایل
+================================= */
+
+@media (max-width: 600px) {
+
+    .why-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .coverage-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 20px;
+    }
+
+    .coverage-text h2 {
+        font-size: 21px;
+    }
+
+    .consultation-content {
+        padding: 35px 20px;
+    }
+
+    .consultation-content h2 {
+        font-size: 21px;
+    }
+
+    .consultation-actions {
+        flex-direction: column;
+    }
+
+    .consultation-button {
+        width: 100%;
+    }
+
+}
