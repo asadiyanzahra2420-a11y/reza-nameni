@@ -999,3 +999,30 @@ footer {
     background: rgba(16, 41, 35, 0.72);
     transform: translateX(-3px);
 }
+/* اصلاح نمایش تصاویر کارت‌های خدمات */
+
+.service-card::before {
+    filter: none !important;
+    transform: scale(1.01);
+    transition: transform 0.4s ease;
+}
+
+.service-card::after {
+    background: rgba(16, 41, 35, 0.25) !important;
+    transition: background 0.3s ease;
+}
+
+/* حالت قرار گرفتن نشانگر روی کارت */
+
+.service-card:hover::before {
+    filter: none !important;
+    transform: scale(1.06);
+}
+
+.service-card:hover::after {
+    background: rgba(16, 41, 35, 0.15) !important;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 18px rgba(16, 41, 35, 0.10) !important;
+}
