@@ -1396,55 +1396,34 @@ footer {
     }
 }
 
-/* دکمه موسیقی پس‌زمینه */
-.music-toggle {
-    position: fixed;
-    bottom: 22px;
-    left: 22px;
-    z-index: 999;
-    background: var(--green);
-    color: #fff;
-    border: 1px solid var(--gold);
-    border-radius: 30px;
-    padding: 10px 17px;
-    font-family: inherit;
-    font-size: 13px;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    transition: 0.3s ease;
-}
-
-.music-toggle:hover {
-    background: var(--green-light);
-    transform: translateY(-2px);
-}
-
-@media (max-width: 480px) {
-    .music-toggle {
-        bottom: 14px;
-        left: 14px;
-        padding: 9px 13px;
-        font-size: 12px;
-    }
-}
-/* دکمه آیکونی موسیقی */
+/* =================================
+   دکمه آیکونی موسیقی
+================================= */
 
 .music-toggle {
     position: fixed;
     bottom: 22px;
     left: 22px;
-    z-index: 999;
-    width: 48px;
-    height: 48px;
+    z-index: 9999;
+
+    width: 50px;
+    height: 50px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 3px;
+
+    padding: 0;
     background: var(--green);
+    color: #ffffff;
+
     border: 1px solid var(--gold);
     border-radius: 50%;
+
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0,0,0,.16);
-    transition: .3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    transition: background .3s ease, transform .3s ease;
 }
 
 .music-toggle:hover {
@@ -1453,29 +1432,48 @@ footer {
 }
 
 .music-toggle svg {
-    width: 21px;
-    height: 21px;
-    fill: white;
     display: none;
+    flex-shrink: 0;
 }
 
-.music-toggle .play-icon {
+.music-toggle .music-note {
     display: block;
+    width: 12px;
+    height: 12px;
+    color: var(--gold);
 }
 
-.music-toggle.playing .play-icon {
-    display: none;
+.music-toggle .play-icon,
+.music-toggle .pause-icon {
+    width: 19px;
+    height: 19px;
+    fill: #ffffff;
+}
+
+.music-toggle:not(.playing) .play-icon {
+    display: block;
 }
 
 .music-toggle.playing .pause-icon {
     display: block;
 }
 
+.music-toggle:focus-visible {
+    outline: 3px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
 @media (max-width: 600px) {
     .music-toggle {
-        width: 44px;
-        height: 44px;
+        width: 46px;
+        height: 46px;
         bottom: 14px;
         left: 14px;
+    }
+
+    .music-toggle .play-icon,
+    .music-toggle .pause-icon {
+        width: 18px;
+        height: 18px;
     }
 }
