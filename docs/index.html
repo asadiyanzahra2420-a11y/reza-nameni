@@ -490,6 +490,26 @@
     });
 
 })();
+    
+<script>
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicToggle");
+
+musicButton.addEventListener("click", async function () {
+    if (music.paused) {
+        try {
+            await music.play();
+            musicButton.textContent = "♫ خاموش کردن موسیقی";
+        } catch (error) {
+            musicButton.textContent = "پخش موسیقی";
+        }
+    } else {
+        music.pause();
+        musicButton.textContent = "♫ پخش موسیقی";
+    }
+});
+</script>
+
 </script>
 
 </body>
