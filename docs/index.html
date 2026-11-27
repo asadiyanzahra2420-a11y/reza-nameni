@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -5,17 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="خدمات نقشه‌برداری اراضی کشاورزی، منابع طبیعی، توپوگرافی، کاداستر، ثبتی و UTM در استان همدان">
     <title>مهندس رضا نامنی | خدمات نقشه‌برداری</title>
-
     <link rel="stylesheet" href="styles.css">
 
     <style>
-        /* پنجره توضیحات خدمات */
         #serviceModal {
             display: none;
             position: fixed;
             inset: 0;
             z-index: 99999;
-            background: rgba(0, 0, 0, 0.78);
+            background: rgba(0,0,0,.78);
             align-items: center;
             justify-content: center;
             padding: 20px;
@@ -36,7 +35,7 @@
             border-radius: 15px;
             border-top: 5px solid #d1ad64;
             text-align: center;
-            animation: modalAppear 0.25s ease;
+            animation: modalAppear .25s ease;
         }
 
         #serviceModal .modal-close {
@@ -67,38 +66,6 @@
             margin-bottom: 25px;
         }
 
-        /* لوگوهای پیام‌رسان‌ها */
-        .social-item {
-            width: 65px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            color: #ffffff;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .social-item img {
-            width: 48px;
-            height: 48px;
-            padding: 8px;
-            object-fit: contain;
-            background: #ffffff;
-            border-radius: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .social-item small {
-            font-size: 12px;
-            color: #eeeeee;
-        }
-
-        .social-item:hover img {
-            transform: translateY(-5px);
-            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.2);
-        }
-
         @keyframes modalAppear {
             from {
                 opacity: 0;
@@ -110,18 +77,63 @@
             }
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .social-item {
+            width: 65px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 9px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .social-item img {
+            width: 48px;
+            height: 48px;
+            padding: 7px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.12);
+            transition: .3s ease;
+        }
+
+        .social-item:hover img {
+            transform: translateY(-5px);
+        }
+
+        .social-item small {
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .social-title {
+            color: var(--text);
+            margin-top: 18px;
+        }
+
         @media (max-width: 600px) {
             #serviceModal .modal-content {
                 padding: 40px 20px 28px;
             }
 
             .social-links {
-                gap: 15px;
+                gap: 13px;
             }
 
             .social-item img {
-                width: 43px;
-                height: 43px;
+                width: 44px;
+                height: 44px;
             }
         }
     </style>
@@ -146,13 +158,10 @@
 
 <main>
 
-    <!-- بخش اصلی سایت -->
     <section class="hero" id="home">
         <div class="hero-content">
             <span class="hero-label">خدمات تخصصی نقشه‌برداری</span>
-
             <h1>دقت در نقشه‌برداری، اطمینان در تصمیم‌گیری</h1>
-
             <p>
                 ارائه خدمات تخصصی نقشه‌برداری، تهیه نقشه‌های توپوگرافی،
                 ثبتی و UTM با دقت و کیفیت حرفه‌ای
@@ -160,8 +169,6 @@
         </div>
     </section>
 
-
-    <!-- خدمات تخصصی -->
     <section id="services">
         <h2 class="section-title">خدمات تخصصی</h2>
 
@@ -200,88 +207,52 @@
         </div>
     </section>
 
-
-    <!-- پنجره توضیحات خدمات -->
     <div id="serviceModal" aria-hidden="true">
         <div class="modal-content" role="dialog" aria-modal="true">
-
-            <button type="button" class="modal-close" id="modalClose" aria-label="بستن">
-                ×
-            </button>
-
+            <button type="button" class="modal-close" id="modalClose" aria-label="بستن">×</button>
             <div class="modal-icon" id="modalIcon"></div>
-
             <h2 id="modalTitle"></h2>
-
             <p id="modalDescription"></p>
-
-            <a href="#contact" class="hero-button" id="modalContact">
-                درخواست مشاوره
-            </a>
-
+            <a href="#contact" class="hero-button" id="modalContact">درخواست مشاوره</a>
         </div>
     </div>
 
-
-    <!-- چرا مهندس رضا نامنی؟ -->
     <section id="why-us" class="why-section">
-
         <h2 class="section-title">چرا مهندس رضا نامنی؟</h2>
-
-        <p class="section-description">
-            دقت، مسئولیت‌پذیری و توجه به نیاز هر پروژه
-        </p>
+        <p class="section-description">دقت، مسئولیت‌پذیری و توجه به نیاز هر پروژه</p>
 
         <div class="why-grid">
 
             <div class="why-card">
                 <span class="why-icon">🎯</span>
                 <h3>دقت در نقشه‌برداری</h3>
-                <p>
-                    توجه به جزئیات و انجام اندازه‌گیری‌ها با دقت،
-                    برای تهیه اطلاعات مکانی قابل اتکا.
-                </p>
+                <p>توجه به جزئیات و انجام اندازه‌گیری‌ها با دقت، برای تهیه اطلاعات مکانی قابل اتکا.</p>
             </div>
 
             <div class="why-card">
                 <span class="why-icon">📐</span>
                 <h3>خدمات متنوع</h3>
-                <p>
-                    ارائه خدمات نقشه‌برداری در زمینه اراضی کشاورزی،
-                    منابع طبیعی، توپوگرافی، کاداستر و UTM.
-                </p>
+                <p>ارائه خدمات نقشه‌برداری در زمینه اراضی کشاورزی، منابع طبیعی، توپوگرافی، کاداستر و UTM.</p>
             </div>
 
             <div class="why-card">
                 <span class="why-icon">🤝</span>
                 <h3>توجه به نیاز مشتری</h3>
-                <p>
-                    بررسی درخواست و انتخاب روش مناسب با توجه
-                    به نوع و شرایط هر پروژه.
-                </p>
+                <p>بررسی درخواست و انتخاب روش مناسب با توجه به نوع و شرایط هر پروژه.</p>
             </div>
 
             <div class="why-card">
                 <span class="why-icon">🗂️</span>
                 <h3>تهیه و ارائه نقشه</h3>
-                <p>
-                    آماده‌سازی اطلاعات و نقشه‌های موردنیاز
-                    متناسب با موضوع و درخواست پروژه.
-                </p>
+                <p>آماده‌سازی اطلاعات و نقشه‌های موردنیاز متناسب با موضوع و درخواست پروژه.</p>
             </div>
 
         </div>
     </section>
 
-
-    <!-- مراحل انجام پروژه -->
     <section id="process" class="process-section">
-
         <h2 class="section-title">مراحل انجام پروژه</h2>
-
-        <p class="section-description">
-            از ثبت درخواست تا آماده‌سازی و تحویل نقشه
-        </p>
+        <p class="section-description">از ثبت درخواست تا آماده‌سازی و تحویل نقشه</p>
 
         <div class="process-grid">
 
@@ -289,104 +260,63 @@
                 <span class="process-number">۰۱</span>
                 <div class="process-icon">📞</div>
                 <h3>ثبت درخواست و مشاوره</h3>
-                <p>
-                    ابتدا نوع درخواست و نیاز پروژه از طریق تماس
-                    با ما بررسی می‌شود.
-                </p>
+                <p>ابتدا نوع درخواست و نیاز پروژه از طریق تماس با ما بررسی می‌شود.</p>
             </div>
 
             <div class="process-card">
                 <span class="process-number">۰۲</span>
                 <div class="process-icon">🔎</div>
                 <h3>بررسی اولیه پروژه</h3>
-                <p>
-                    اطلاعات و محدوده موردنظر بررسی شده و
-                    اقدامات لازم برای اجرای پروژه مشخص می‌شود.
-                </p>
+                <p>اطلاعات و محدوده موردنظر بررسی شده و اقدامات لازم برای اجرای پروژه مشخص می‌شود.</p>
             </div>
 
             <div class="process-card">
                 <span class="process-number">۰۳</span>
                 <div class="process-icon">📡</div>
                 <h3>عملیات نقشه‌برداری</h3>
-                <p>
-                    برداشت اطلاعات و اندازه‌گیری‌های موردنیاز
-                    در محل پروژه انجام می‌شود.
-                </p>
+                <p>برداشت اطلاعات و اندازه‌گیری‌های موردنیاز در محل پروژه انجام می‌شود.</p>
             </div>
 
             <div class="process-card">
                 <span class="process-number">۰۴</span>
                 <div class="process-icon">🗺️</div>
                 <h3>تهیه و تحویل نقشه</h3>
-                <p>
-                    اطلاعات برداشت‌شده پردازش و نقشه متناسب
-                    با درخواست پروژه آماده و ارائه می‌شود.
-                </p>
+                <p>اطلاعات برداشت‌شده پردازش و نقشه متناسب با درخواست پروژه آماده و ارائه می‌شود.</p>
             </div>
 
         </div>
     </section>
 
-
-    <!-- محدوده فعالیت -->
     <section id="coverage" class="coverage-section">
-
         <div class="coverage-content">
-
             <div class="coverage-symbol">📍</div>
-
             <div class="coverage-text">
                 <span class="coverage-label">محدوده جغرافیایی خدمات</span>
-
                 <h2>همراه شما در سراسر استان همدان</h2>
-
                 <p>
                     خدمات نقشه‌برداری اراضی کشاورزی، منابع طبیعی،
                     توپوگرافی، کاداستر، نقشه‌های ثبتی و UTM
                     در سطح استان همدان ارائه می‌شود.
                 </p>
             </div>
-
         </div>
     </section>
 
-
-    <!-- گالری تصاویر -->
     <section class="gallery" id="gallery">
-
         <h2 class="section-title">گالری تصاویر</h2>
-
-        <p class="section-description">
-            نمونه‌ای از تجهیزات و فعالیت‌های نقشه‌برداری
-        </p>
+        <p class="section-description">نمونه‌ای از تجهیزات و فعالیت‌های نقشه‌برداری</p>
 
         <div class="gallery-grid">
-
-            <img src="photo_2026-11-23_22-27-35.jpg"
-                 alt="نمونه فعالیت نقشه‌برداری" loading="lazy">
-
-            <img src="photo_2026-11-23_22-27-45.jpg"
-                 alt="دوربین نقشه‌برداری" loading="lazy">
-
-            <img src="photo_2026-11-23_22-27-57.jpg"
-                 alt="نمونه کار نقشه‌برداری" loading="lazy">
-
-            <img src="photo_2026-11-23_22-28-09.jpg"
-                 alt="تجهیزات نقشه‌برداری" loading="lazy">
-
-            <img src="photo_2026-11-23_22-28-17.jpg"
-                 alt="فعالیت نقشه‌برداری" loading="lazy">
-
+            <img src="photo_2026-11-23_22-27-35.jpg" alt="نمونه فعالیت نقشه‌برداری" loading="lazy">
+            <img src="photo_2026-11-23_22-27-45.jpg" alt="دوربین نقشه‌برداری" loading="lazy">
+            <img src="photo_2026-11-23_22-27-57.jpg" alt="نمونه کار نقشه‌برداری" loading="lazy">
+            <img src="photo_2026-11-23_22-28-09.jpg" alt="تجهیزات نقشه‌برداری" loading="lazy">
+            <img src="photo_2026-11-23_22-28-17.jpg" alt="فعالیت نقشه‌برداری" loading="lazy">
         </div>
     </section>
 
-
-    <!-- درباره ما -->
     <section id="about">
-
         <h2 class="section-title">درباره ما</h2>
-
         <div class="about-content">
             <p>
                 مهندس رضا نامنی با ارائه خدمات تخصصی نقشه‌برداری،
@@ -396,50 +326,28 @@
                 تجهیزات و روش‌های تخصصی نقشه‌برداری است.
             </p>
         </div>
-
     </section>
 
-
-    <!-- دعوت به تماس و ثبت سفارش -->
     <section id="consultation" class="consultation-section">
-
         <div class="consultation-content">
-
             <span class="consultation-label">شروع همکاری</span>
-
             <h2>برای پروژه خود به خدمات نقشه‌برداری نیاز دارید؟</h2>
-
             <p>
                 برای دریافت راهنمایی، بررسی درخواست و هماهنگی
                 انجام پروژه، با ما در ارتباط باشید.
             </p>
 
             <div class="consultation-actions">
-
                 <a href="tel:09188109597" class="consultation-button">
                     <span>☎</span>
-                    تماس مستقیم
+                    تماس و دریافت مشاوره
                 </a>
-
-                <a href="https://wa.me/989188109597"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="consultation-button whatsapp-button">
-                    <span>✉</span>
-                    ارتباط در واتساپ
-                </a>
-
             </div>
-
         </div>
     </section>
 
-
-    <!-- تماس با ما -->
     <section class="contact" id="contact">
-
         <h2 class="section-title">تماس و ارتباط با ما</h2>
-
         <p>مهندس رضا نامنی</p>
 
         <p class="phone-number">
@@ -448,62 +356,40 @@
         </p>
 
         <p class="social-title">
-            از طریق پیام‌رسان‌های زیر با ما در ارتباط باشید:
+            از طریق شبکه‌های اجتماعی زیر با ما در ارتباط باشید.
         </p>
 
         <div class="social-links">
 
-            <!-- واتساپ -->
-            <a class="social-item whatsapp"
-               href="https://wa.me/989188109597"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="ارتباط در واتساپ">
-
-                <img src="https://cdn.simpleicons.org/whatsapp/25D366"
-                     alt="لوگوی واتساپ">
-
+            <a class="social-item" href="https://wa.me/989188109597"
+               target="_blank" rel="noopener noreferrer" aria-label="واتساپ">
+                <img src="https://cdn.simpleicons.org/whatsapp/25D366" alt="واتساپ">
                 <small>واتساپ</small>
             </a>
 
-            <!-- تلگرام -->
-            <a class="social-item telegram"
-               href="https://t.me/+989188109597"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="ارتباط در تلگرام">
-
-                <img src="https://cdn.simpleicons.org/telegram/229ED9"
-                     alt="لوگوی تلگرام">
-
+            <a class="social-item" href="https://t.me/+989188109597"
+               target="_blank" rel="noopener noreferrer" aria-label="تلگرام">
+                <img src="https://cdn.simpleicons.org/telegram/229ED9" alt="تلگرام">
                 <small>تلگرام</small>
             </a>
 
-            <!-- روبیکا -->
-            <div class="social-item rubika">
-                <img src="https://www.google.com/s2/favicons?domain=rubika.ir&sz=128"
-                     alt="لوگوی روبیکا">
+            <div class="social-item">
+                <img src="https://www.google.com/s2/favicons?domain=rubika.ir&sz=128" alt="روبیکا">
                 <small>روبیکا</small>
             </div>
 
-            <!-- ایتا -->
-            <div class="social-item eitaa">
-                <img src="https://www.google.com/s2/favicons?domain=eitaa.com&sz=128"
-                     alt="لوگوی ایتا">
+            <div class="social-item">
+                <img src="https://www.google.com/s2/favicons?domain=eitaa.com&sz=128" alt="ایتا">
                 <small>ایتا</small>
             </div>
 
-            <!-- سروش -->
-            <div class="social-item splus">
-                <img src="https://www.google.com/s2/favicons?domain=splus.ir&sz=128"
-                     alt="لوگوی سروش">
+            <div class="social-item">
+                <img src="https://www.google.com/s2/favicons?domain=splus.ir&sz=128" alt="سروش">
                 <small>سروش</small>
             </div>
 
-            <!-- بله -->
-            <div class="social-item bale">
-                <img src="https://www.google.com/s2/favicons?domain=bale.ai&sz=128"
-                     alt="لوگوی بله">
+            <div class="social-item">
+                <img src="https://www.google.com/s2/favicons?domain=bale.ai&sz=128" alt="بله">
                 <small>بله</small>
             </div>
 
@@ -512,11 +398,9 @@
 
 </main>
 
-
 <footer>
     <p>تمامی حقوق این وب‌سایت متعلق به مهندس رضا نامنی است.</p>
 </footer>
-
 
 <script>
 (function () {
@@ -561,14 +445,8 @@
     const closeButton = document.getElementById("modalClose");
     const contactButton = document.getElementById("modalContact");
 
-    if (!modal || !modalIcon || !modalTitle || !modalDescription) {
-        console.error("اجزای پنجره توضیحات پیدا نشدند.");
-        return;
-    }
-
     function openService(index) {
         const service = services[index];
-
         if (!service) return;
 
         modalIcon.textContent = service.icon;
@@ -592,19 +470,13 @@
         });
     });
 
-    if (closeButton) {
-        closeButton.addEventListener("click", closeService);
-    }
+    closeButton.addEventListener("click", closeService);
 
     modal.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            closeService();
-        }
+        if (event.target === modal) closeService();
     });
 
-    if (contactButton) {
-        contactButton.addEventListener("click", closeService);
-    }
+    contactButton.addEventListener("click", closeService);
 
     document.addEventListener("keydown", function(event) {
         if (event.key === "Escape" && modal.classList.contains("active")) {
