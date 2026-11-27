@@ -1,4 +1,4 @@
-
+<script>
 const services = [
     {
         icon: "🌾",
@@ -41,68 +41,91 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.getElementById("modalClose");
     const contactButton = document.getElementById("modalContact");
 
-    // بررسی وجود پنجره توضیحات
     if (!modal || !modalIcon || !modalTitle || !modalDescription) {
         console.error("بخش توضیحات خدمات در HTML پیدا نشد.");
-        return;
-    }
+    } else {
 
-    // باز کردن توضیحات هر خدمت
-    const serviceCards = document.querySelectorAll(".service-card");
+        const serviceCards = document.querySelectorAll(".service-card");
 
-    serviceCards.forEach(function (card) {
+        serviceCards.forEach(function (card) {
+            card.addEventListener("click", function () {
 
-        card.addEventListener("click", function () {
+                const index = Number(card.dataset.service);
+                const service = services[index];
 
-            const index = Number(card.dataset.service);
-            const service = services[index];
+                if (!service) return;
 
-            if (!service) return;
+                modalIcon.textContent = service.icon;
+                modalTitle.textContent = service.title;
+                modalDescription.textContent = service.description;
 
-            modalIcon.textContent = service.icon;
-            modalTitle.textContent = service.title;
-            modalDescription.textContent = service.description;
+                modal.classList.add("active");
+                modal.setAttribute("aria-hidden", "false");
 
-            modal.classList.add("active");
-            modal.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
 
-            document.body.style.overflow = "hidden";
+                if (closeButton) {
+                    closeButton.focus();
+                }
+            });
+        });
 
-            if (closeButton) {
-                closeButton.focus();
+        function closeModal() {
+            modal.classList.remove("active");
+            modal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener("click", closeModal);
+        }
+
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeModal();
             }
         });
 
-    });
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && modal.classList.contains("active")) {
+                closeModal();
+            }
+        });
 
-    // بستن پنجره
-    function closeModal() {
-        modal.classList.remove("active");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
+        if (contactButton) {
+            contactButton.addEventListener("click", closeModal);
+        }
     }
 
-    if (closeButton) {
-        closeButton.addEventListener("click", closeModal);
-    }
+    // کنترل پخش و توقف موسیقی
+    const music = document.getElementById("backgroundMusic");
+    const musicButton = document.getElementById("musicToggle");
 
-    // بستن با کلیک بیرون پنجره
-    modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
+    if (music && musicButton) {
 
-    // بستن با کلید Escape
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && modal.classList.contains("active")) {
-            closeModal();
-        }
-    });
+        musicButton.addEventListener("click", async function () {
 
-    // بستن پنجره هنگام رفتن به بخش تماس
-    if (contactButton) {
-        contactButton.addEventListener("click", closeModal);
+            if (music.paused) {
+                try {
+                    await music.play();
+
+                    musicButton.classList.add("playing");
+                    musicButton.setAttribute("aria-label", "توقف موسیقی");
+                    musicButton.title = "توقف موسیقی";
+
+                } catch (error) {
+                    console.error("خطا در پخش موسیقی:", error);
+                }
+
+            } else {
+                music.pause();
+
+                musicButton.classList.remove("playing");
+                musicButton.setAttribute("aria-label", "پخش موسیقی");
+                musicButton.title = "پخش موسیقی";
+            }
+        });
     }
 
 });
+</script>
