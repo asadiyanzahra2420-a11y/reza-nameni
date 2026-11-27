@@ -48,7 +48,10 @@ img {
     max-width: 100%;
 }
 
-/* سربرگ */
+/* =================================
+   سربرگ و منوی اصلی
+================================= */
+
 header {
     background: var(--green-dark);
     color: var(--white);
@@ -83,13 +86,15 @@ nav a:hover {
     color: var(--gold);
 }
 
-/* بخش اصلی */
+/* =================================
+   بخش اصلی سایت
+================================= */
+
 .hero {
     min-height: 560px;
     display: flex;
     align-items: center;
     padding: 70px 8%;
-
     background:
         linear-gradient(
             90deg,
@@ -97,7 +102,6 @@ nav a:hover {
             rgba(35, 83, 68, 0.55)
         ),
         url("./photo_2026-11-23_22-27-45.jpg") center center / cover no-repeat;
-
     color: var(--white);
 }
 
@@ -142,7 +146,10 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
-/* بخش‌های عمومی */
+/* =================================
+   تنظیمات عمومی بخش‌ها
+================================= */
+
 section {
     padding: 75px 8%;
 }
@@ -161,7 +168,10 @@ section {
     font-size: 14px;
 }
 
-/* کارت‌های خدمات با تصویر پس‌زمینه */
+/* =================================
+   کارت‌های خدمات
+================================= */
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -196,7 +206,6 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* تصویر پس‌زمینه */
 .service-card::before {
     content: "";
     position: absolute;
@@ -213,7 +222,6 @@ section {
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-/* لایه سبز تیره روی عکس */
 .service-card::after {
     content: "";
     position: absolute;
@@ -229,7 +237,8 @@ section {
     transition: background 0.3s ease;
 }
 
-/* تصویر اختصاصی هر کارت */
+/* تصاویر اختصاصی کارت‌ها */
+
 .service-card:nth-child(1) {
     --card-image: url("./Screenshot_20261126_234217_ChatGPT.jpg");
 }
@@ -255,6 +264,7 @@ section {
 }
 
 /* رنگ نوار پایین کارت‌ها */
+
 .service-card:nth-child(2),
 .service-card:nth-child(5) {
     border-bottom-color: var(--green-light);
@@ -265,7 +275,8 @@ section {
     border-bottom-color: var(--brick);
 }
 
-/* آیکون خدمات */
+/* آیکون کارت‌ها */
+
 .service-icon {
     width: 58px;
     height: 58px;
@@ -297,7 +308,6 @@ section {
     font-weight: 600;
 }
 
-/* افکت حرکت و روشن شدن عکس */
 .service-card:hover {
     transform: translateY(-7px);
     box-shadow: 0 14px 30px rgba(16, 41, 35, 0.25);
@@ -321,7 +331,10 @@ section {
     outline-offset: 4px;
 }
 
-/* پنجره توضیحات خدمات */
+/* =================================
+   پنجره توضیحات خدمات
+================================= */
+
 .service-modal {
     display: none;
     position: fixed;
@@ -401,234 +414,43 @@ section {
     }
 }
 
-/* گالری */
-.gallery {
-    background: var(--cream);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border: 4px solid var(--white);
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(24, 59, 50, 0.12);
-    transition: all 0.35s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.035);
-    border-color: var(--gold);
-}
-
-/* درباره ما */
-#about {
-    background: var(--background);
-}
-
-.about-content {
-    max-width: 900px;
-    margin: auto;
-    background: var(--white);
-    border-right: 5px solid var(--green-light);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(24, 59, 50, 0.06);
-    color: #59675f;
-    font-size: 15px;
-    text-align: justify;
-}
-
-/* تماس با ما */
-.contact {
-    background: linear-gradient(135deg, var(--green-dark), #285c4d);
-    border-top: 4px solid var(--gold);
-    color: var(--white);
-    text-align: center;
-}
-
-.contact .section-title {
-    color: var(--gold);
-}
-
-.contact p {
-    margin: 12px 0;
-    color: #eeeeee;
-}
-
-.contact .phone-number a {
-    color: var(--gold-light);
-    font-weight: 700;
-    display: inline-block;
-}
-
-.social-title {
-    margin-top: 25px !important;
-    margin-bottom: 18px !important;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    margin-top: 20px;
-}
-
-.social-item {
-    width: 65px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7px;
-    color: var(--white);
-}
-
-.social-item > span {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 14px;
-    font-size: 21px;
-    font-weight: 800;
-    color: var(--white);
-    transition: 0.3s;
-}
-
-.social-item small {
-    font-size: 12px;
-    color: #eeeeee;
-}
-
-.social-item:hover > span {
-    transform: translateY(-5px);
-}
-
-.whatsapp > span {
-    background: #25D366;
-}
-
-.telegram > span {
-    background: #229ED9;
-}
-
-.rubika > span {
-    background: #8B62C9;
-}
-
-.eitaa > span {
-    background: #E99A36;
-}
-
-.splus > span {
-    background: #397968;
-}
-
-.bale > span {
-    background: #2787D8;
-}
-
-/* پایین سایت */
-footer {
-    background: #0a1d18;
-    color: #d9e2dc;
-    text-align: center;
-    padding: 20px;
-    font-size: 13px;
-    border-top: 2px solid var(--green-light);
-}
-
-/* تبلت */
-@media (max-width: 900px) {
-    .services-grid,
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero h1 {
-        font-size: 31px;
-    }
-}
-
-/* موبایل */
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        padding: 17px 5%;
-    }
-
-    nav {
-        justify-content: center;
-        gap: 12px 17px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-    .hero {
-        min-height: 470px;
-        padding: 55px 7%;
-        background-position: center;
-    }
-
-    .hero h1 {
-        font-size: 25px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    section {
-        padding: 55px 6%;
-    }
-
-    .section-title {
-        font-size: 24px;
-    }
-
-    .services-grid,
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card {
-        min-height: 210px;
-    }
-
-    .gallery-grid img {
-        height: 230px;
-    }
-
-    .modal-content {
-        padding: 38px 22px 28px;
-    }
-
-    .modal-content h2 {
-        font-size: 19px;
-    }
-
-    .social-links {
-        gap: 12px;
-    }
-}
-
 /* =================================
-   بخش چرا مهندس رضا نامنی؟
+   اصول ما در ارائه خدمات نقشه‌برداری
 ================================= */
 
 .why-section {
     background: #fff;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.why-section .section-title {
+    color: var(--green);
+    font-size: 27px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.why-section .section-title::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: 12px auto 0;
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+.why-section .section-description {
+    max-width: 780px;
+    margin: 0 auto 38px;
+    padding: 0 15px;
+    color: #68766e;
+    font-size: 14px;
+    line-height: 2.5;
+    text-align: center;
 }
 
 .why-grid {
@@ -801,6 +623,56 @@ footer {
 }
 
 /* =================================
+   گالری تصاویر
+================================= */
+
+.gallery {
+    background: var(--cream);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border: 4px solid var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(24, 59, 50, 0.12);
+    transition: all 0.35s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.035);
+    border-color: var(--gold);
+}
+
+/* =================================
+   درباره ما
+================================= */
+
+#about {
+    background: var(--background);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    background: var(--white);
+    border-right: 5px solid var(--green-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(24, 59, 50, 0.06);
+    color: #59675f;
+    font-size: 15px;
+    text-align: justify;
+}
+
+/* =================================
    درخواست مشاوره
 ================================= */
 
@@ -880,8 +752,35 @@ footer {
 }
 
 /* =================================
-   شبکه‌های اجتماعی
+   تماس و شبکه‌های اجتماعی
 ================================= */
+
+.contact {
+    background: linear-gradient(135deg, var(--green-dark), #285c4d);
+    border-top: 4px solid var(--gold);
+    color: var(--white);
+    text-align: center;
+}
+
+.contact .section-title {
+    color: var(--gold);
+}
+
+.contact p {
+    margin: 12px 0;
+    color: #eeeeee;
+}
+
+.contact .phone-number a {
+    color: var(--gold-light);
+    font-weight: 700;
+    display: inline-block;
+}
+
+.social-title {
+    margin-top: 25px !important;
+    margin-bottom: 18px !important;
+}
 
 .social-links {
     display: flex;
@@ -918,18 +817,30 @@ footer {
 }
 
 .social-item small {
-    color: var(--green);
+    color: var(--white);
     font-size: 12px;
     font-weight: 600;
 }
 
 .social-title {
-    color: var(--text);
-    margin-top: 18px;
+    color: var(--white);
 }
 
 /* =================================
-   نمایش تبلت و موبایل
+   پایین سایت
+================================= */
+
+footer {
+    background: #0a1d18;
+    color: #d9e2dc;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    border-top: 2px solid var(--green-light);
+}
+
+/* =================================
+   نمایش تبلت
 ================================= */
 
 @media (max-width: 1000px) {
@@ -939,7 +850,88 @@ footer {
     }
 }
 
+@media (max-width: 900px) {
+    .services-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+}
+
+/* =================================
+   نمایش موبایل
+================================= */
+
 @media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 17px 5%;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px 17px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 55px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .services-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 210px;
+    }
+
+    .gallery-grid img {
+        height: 230px;
+    }
+
+    .modal-content {
+        padding: 38px 22px 28px;
+    }
+
+    .modal-content h2 {
+        font-size: 19px;
+    }
+
+    .why-section .section-title {
+        font-size: 21px;
+    }
+
+    .why-section .section-description {
+        font-size: 13px;
+        line-height: 2.3;
+    }
+
     .why-grid,
     .process-grid {
         grid-template-columns: 1fr;
@@ -978,54 +970,5 @@ footer {
     .social-item img {
         width: 44px;
         height: 44px;
-    }
-}
-/* =================================
-   عنوان بخش اصول ما در ارائه خدمات
-================================= */
-
-.why-section {
-    padding-top: 75px;
-    padding-bottom: 75px;
-}
-
-.why-section h2:first-of-type {
-    color: var(--green);
-    font-size: 27px;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.9;
-    margin-bottom: 18px;
-    position: relative;
-}
-
-.why-section h2:first-of-type::after {
-    content: "";
-    display: block;
-    width: 65px;
-    height: 4px;
-    margin: 12px auto 0;
-    background: var(--gold);
-    border-radius: 10px;
-}
-
-.why-section h2:first-of-type + p {
-    max-width: 780px;
-    margin: 0 auto 38px;
-    padding: 0 15px;
-    color: #68766e;
-    font-size: 14px;
-    line-height: 2.5;
-    text-align: center;
-}
-
-@media (max-width: 600px) {
-    .why-section h2:first-of-type {
-        font-size: 21px;
-    }
-
-    .why-section h2:first-of-type + p {
-        font-size: 13px;
-        line-height: 2.3;
     }
 }
