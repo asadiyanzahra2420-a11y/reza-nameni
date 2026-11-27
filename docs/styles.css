@@ -980,3 +980,52 @@ footer {
         height: 44px;
     }
 }
+/* =================================
+   عنوان بخش اصول ما در ارائه خدمات
+================================= */
+
+.why-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.why-section h2:first-of-type {
+    color: var(--green);
+    font-size: 27px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.why-section h2:first-of-type::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: 12px auto 0;
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+.why-section h2:first-of-type + p {
+    max-width: 780px;
+    margin: 0 auto 38px;
+    padding: 0 15px;
+    color: #68766e;
+    font-size: 14px;
+    line-height: 2.5;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .why-section h2:first-of-type {
+        font-size: 21px;
+    }
+
+    .why-section h2:first-of-type + p {
+        font-size: 13px;
+        line-height: 2.3;
+    }
+}
