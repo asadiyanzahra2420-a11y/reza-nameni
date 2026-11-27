@@ -972,3 +972,30 @@ footer {
         height: 44px;
     }
 }
+/* نشانه ظریف قابل کلیک بودن کارت‌های خدمات */
+
+.service-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.service-card::after {
+    content: "مشاهده جزئیات  ←";
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.78);
+    background: rgba(16, 41, 35, 0.48);
+    padding: 5px 10px;
+    border-radius: 20px;
+    opacity: 0.8;
+    transition: all 0.25s ease;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+    background: rgba(16, 41, 35, 0.72);
+    transform: translateX(-3px);
+}
